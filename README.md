@@ -1,99 +1,157 @@
+## 📦 Module 14: JWT Authentication + Frontend + Playwright + CI/CD
 
-This project extends a FastAPI-based calculator application by implementing a Calculation model using SQLAlchemy, robust validation using Pydantic schemas, and a complete
+## 📌 Project Overview
+This project implements a secure authentication system using JWT (JSON Web Tokens) with a FastAPI backend and PostgreSQL database.
+Users can:
+Register a new account
+Log in using valid credentials
+Receive a JWT token for authentication
+In addition, this project includes:
+Front-end login and registration pages
+Playwright end-to-end (E2E) tests
+Docker containerization
+GitHub Actions CI/CD pipeline for automated testing and deployment
 
-CI/CD pipeline.
+## 🧩 Features Implemented
 
-The application integrates PostgreSQL for persistence, uses a factory pattern for calculation logic, and includes unit and integration tests. Docker is used for containerization, and GitHub Actions automates testing and deployment to Docker Hub.
+## 🔐 Authentication (Backend)
+/register → Creates a new user
+/login → Authenticates user and returns JWT
+Passwords are securely hashed before storing
+Duplicate users are prevented
+Pydantic validation ensures correct input format
 
-This module focuses on backend modeling, validation, and CI/CD automation.
+## 🌐 Front-End
+register.html
+Email + password input
+Confirm password check
+Client-side validation (email format, password length)
+login.html
+Email + password input
+Displays success/error messages
+Stores JWT token in localStorage
 
-⚙️ Features
+## 🎭 Playwright Testing
+Positive tests:
+Successful registration
+Successful login
+Negative tests:
+Short password → error
+Wrong credentials → error
 
-FastAPI calculator backend
-SQLAlchemy Calculation model
-Pydantic schema validation
-Factory pattern for operations (Add, Subtract, Multiply, Divide)
-PostgreSQL database integration
-Unit and integration testing
-Dockerized application
-GitHub Actions CI/CD pipeline
-Docker Hub image deployment
-🧮 Calculation Model
+## 🐳 DevOps (CI/CD)
+Docker used for containerization
+GitHub Actions pipeline:
+Spins up database + backend
+Runs tests automatically
+Builds Docker image
+Pushes to Docker Hub
 
-The Calculation model includes:
+## 🛠️ Tech Stack
+Python (FastAPI)
+PostgreSQL
+SQLAlchemy
+Pydantic
+JWT Authentication
+HTML / CSS / JavaScript
+Playwright
+Docker
+GitHub Actions
 
-id (Primary Key)
-a (First operand)
-b (Second operand)
-type (Operation type: Add, Sub, Multiply, Divide)
-result (Optional stored result)
-🧠 Factory Pattern
+## 🚀 Setup Instructions
+🧩 1. Clone Repository
 
-A factory pattern is used to handle different calculation types:
+## 🧩 2. Create Virtual Environment
+python3 -m venv venv
+source venv/bin/activate   # Mac
+venv\Scripts\activate      # Windows
 
-Add
-Subtract
-Multiply
-Divide
-This improves scalability and keeps logic clean and modular.
+## 🧩 3. Install Dependencies
+pip install -r requirements.txt
 
-🔐 Validation (Pydantic)
+## 🧩 4. Run Backend
+uvicorn app.main:app --reload
+Open:
+http://localhost:8000
+API Docs:
+http://localhost:8000/docs
 
-CalculationCreate
+## 🧩 5. Run Front-End
+cd frontend
+python3 -m http.server 5500
+Open in browser:
+http://localhost:5500/register.html
+http://localhost:5500/login.html
 
-Accepts: a, b, type
-Validates:
-Operation type must be valid
-Division by zero is prevented
-CalculationRead
+## 🧩 6. JWT Authentication Usage
+Register
+POST /register
+{
+  "email": "test@example.com",
+  "password": "password123"
+}
+Login
+POST /login
+Response:
+{
+  "access_token": "your_jwt_token",
+  "token_type": "bearer"
+}
+👉 Token is stored in browser localStorage
 
-Returns:
-id, a, b, type, result
-📦 Project Structure
+## 🧪 Testing
+Backend Tests
+pytest
+Playwright Setup
+npm install
+npx playwright install
+Run Playwright Tests
+npx playwright test
 
-. ├── app/ │ ├── models/ │ │ └── calculation.py │ ├── schemas/ │ │ └── calculation.py │ ├── operations/ │ │ └── factory.py │ ├── database.py │ └── main.py ├── tests/ │ ├── unit/ │ ├── integration/ │ └── e2e/ ├── docker-compose.yml ├── Dockerfile ├── requirements.txt ├── README.md └── Reflection.md
+## 🐳 Docker Setup
+Run with Docker
+docker compose up --build
+Build Image
+docker build -t module14-app .
+Run Container
+docker run -p 8000:8000 module14-app
 
-🧪 Testing
+## 🔄 CI/CD Pipeline
+GitHub Actions automatically:
+Starts PostgreSQL + FastAPI
+Runs pytest
+Runs Playwright tests
+Builds Docker image
+Pushes to Docker Hub
 
-Test Types
+## 🐳 Docker Hub Repository :
+https://hub.docker.com/repository/docker/kdulobo12/module13-web/general
 
-Unit Tests
+👉 Docker Image Link: https://hub.docker.com/r/kdulobo12/is601module13
 
-Validate each operation type
-Test factory pattern logic
-Test schema validation
-Integration Tests
-
-Database insertions
-Data correctness verification
-Error handling (invalid inputs)
-📊 Coverage
-
-High test coverage across models and validation
-Tests run automatically in CI pipeline
-🐳 Running the Project Locally
-
-Step 1: Clone Repo
-
-git clone https://github.com/kdulobo12/IS601_Module11 cd IS601_Module11 Step 2: Setup Virtual Environment python3 -m venv venv source venv/bin/activate pip install -r requirements.txt Step 3: Run with Docker docker compose down -v docker compose up --build Step 4: Access Application FastAPI App → http://localhost:8000 Swagger Docs → http://localhost:8000/docs pgAdmin → http://localhost:5050
-
-🧪 Run Tests
-
-pytest With coverage: pytest --cov=app --cov-report=html Open: htmlcov/index.html
-
-🔄 CI/CD Pipeline
-
-GitHub Actions workflow performs: Install dependencies Run unit + integration tests Build Docker image Run security scan (Trivy) Push image to Docker Hub
-
-🐳 Docker Hub Repository
-
-👉 Docker Image Link: https://hub.docker.com/r/kdulobo12/is601_module11
-
-📸 Screenshots
+## 📸 Screenshots
 
 ✅ GitHub Actions Success image
+✅ Playwright tests passing
+✅ Register page working
+✅ Login page working
 
-✅ Docker Hub Image alt text
 
-Link: https://hub.docker.com/r/kdulobo12/is601_module11
+## 💡 Reflection (Short Summary)
 
+This project helped me understand how authentication works in a real application. I implemented JWT-based login and registration, where passwords are hashed before storing them in the database. I also built front-end pages and connected them to the backend API.
+Writing Playwright tests helped me test the application from a user perspective, including both successful and failed cases. Setting up Docker and GitHub Actions showed how CI/CD pipelines automate testing and deployment.
+Overall, this project improved my understanding of full-stack development, security practices, and DevOps workflows.
+
+## 🔥 Quick Commands Cheat Sheet
+
+Action	Command
+Run backend	uvicorn app.main:app --reload
+Run frontend	python3 -m http.server 5500
+Run pytest	pytest
+Run Playwright	npx playwright test
+Docker run	docker compose up --build
+Push code	git add . && git commit -m "msg" && git push
+
+## 👩‍💻 Author
+Krupa Dulobo
