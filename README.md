@@ -1,4 +1,4 @@
-## 📦 Module 14: JWT Authentication + Frontend + Playwright + CI/CD
+## 📦 Module 13: JWT Authentication + Frontend + Playwright + CI/CD
 
 ## 📌 Project Overview
 This project implements a secure authentication system using JWT (JSON Web Tokens) with a FastAPI backend and PostgreSQL database.
