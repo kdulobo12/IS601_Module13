@@ -137,6 +137,19 @@ https://hub.docker.com/repository/docker/kdulobo12/module13-web/general
 
 ✅ Playwright tests passing
 
+<img width="1680" height="1050" alt="Screenshot 2026-04-28 at 23 40 24" src="https://github.com/user-attachments/assets/38ec28f4-8508-43e9-a8cb-49ad1eb17535" />
+
+
+Positive: 
+<img width="1680" height="1050" alt="Screenshot 2026-04-28 at 23 44 32" src="https://github.com/user-attachments/assets/f05b7b43-bcff-4f4a-8206-7a129b332b9c" />
+
+<img width="1680" height="1050" alt="Screenshot 2026-04-28 at 23 45 04" src="https://github.com/user-attachments/assets/ca47f9aa-514c-440b-a20e-c078f1853253" />
+
+
+Negative: 
+<img width="1680" height="1050" alt="Screenshot 2026-04-28 at 23 47 50" src="https://github.com/user-attachments/assets/323ac49c-ac63-41fa-a5a9-501aece727e4" />
+
+
 
 ✅ Register page working
 <img width="1680" height="1050" alt="Screenshot 2026-04-28 at 19 32 08" src="https://github.com/user-attachments/assets/4defe146-2184-4e40-851a-ee1d908c2141" />
