@@ -136,6 +136,8 @@ https://hub.docker.com/repository/docker/kdulobo12/module13-web/general
 <img width="3344" height="1612" alt="image" src="https://github.com/user-attachments/assets/82b0a1ea-10f1-41ea-aa72-3024d2ba4925" />
 
 ✅ Playwright tests passing
+
+
 ✅ Register page working
 <img width="1680" height="1050" alt="Screenshot 2026-04-28 at 19 32 08" src="https://github.com/user-attachments/assets/4defe146-2184-4e40-851a-ee1d908c2141" />
 
